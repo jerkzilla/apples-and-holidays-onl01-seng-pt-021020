@@ -18,6 +18,8 @@ def second_supply_for_fourth_of_july(holiday_hash)
   #   }
   # }
   # return the second element in the 4th of July array
+
+  holiday_supplies[:summer][:fourth_of_july][1]
 end
 
 def add_supply_to_winter_holidays(holiday_hash, supply)
@@ -53,7 +55,33 @@ def all_supplies_in_holidays(holiday_hash)
   # Summer:
   #   Fourth Of July: Fireworks, BBQ
   # etc.
+  def all_supplies_in_holidays(holiday_hash)
+    # iterate through holiday_hash and print items such that your readout resembles:
+    # Winter:
+    #   Christmas: Lights, Wreath
+    #   New Years: Party Hats
+    # Summer:
+    #   Fourth Of July: Fireworks, BBQ
+    # etc.
 
+   holiday_hash.each do |key, val|
+     xy = ""
+      xy += "#{key.to_s.capitalize}:"
+      yz = ""
+      val.each do |keys, vals|
+        yz += "#{keys}:"
+      vals.each{ |x|   yz << "#{x.to_s}" }
+      #print xy
+      #print yz
+
+   end
+  print <<-DUDE
+  #{xy}
+        #{yz}
+  DUDE
+  end
+
+  end
 end
 
 def all_holidays_with_bbq(holiday_hash)
