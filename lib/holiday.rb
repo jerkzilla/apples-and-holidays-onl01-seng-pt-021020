@@ -80,22 +80,12 @@ end
     #   Fourth Of July: Fireworks, BBQ
     # etc.
 
-   holiday_hash.each do |key, val|
-     xy = ""
-      xy += "#{key.to_s.capitalize}:"
-      yz = ""
-      val.each do |keys, vals|
-        yz += "#{keys}:"
-      vals.each{ |x|   yz << "#{x.to_s}" }
-      #print xy
-      #print yz
-
+    holiday_hash.each do |season, holiday|
+     puts "#{season.capitalize}:"
+     holiday.each do |holiday, supplies|
+     puts "  #{holiday.to_s.split("_").map{|x| x.capitalize}.join(" ")}: #{supplies.join(", ")}"
    end
-  print <<-DUDE
-  #{xy}
-        #{yz}
-  DUDE
-  end
+ end
 
   end
 
